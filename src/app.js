@@ -5,6 +5,7 @@ const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 
 const app=express()
+const port = process.env.PORT || 3000
 
 const publicpath=path.join(__dirname, '../public')
 app.use(express.static(publicpath))
@@ -15,6 +16,7 @@ app.set('views', viewsPath)
 
 const partialPath= path.join(__dirname, '../templates/partials')
 hbs.registerPartials(partialPath)
+ 
  
 
 app.get('', (req, res)=>{
@@ -101,5 +103,5 @@ app.get('*', (req, res)=>{
 
 
 
-app.listen(3000, ()=>{console.log('server is on.......')
+app.listen(port, ()=>{console.log('server is on port '+ port)
 })
