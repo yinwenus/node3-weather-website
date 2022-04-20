@@ -23,7 +23,7 @@ app.get('', (req, res)=>{
     res.render('index', {
         title: 'Passion Garden',
         name: 'catherine',
-        company: 'passion garden'
+        company: 'Passion Garden'
 
     })
 })
@@ -32,7 +32,7 @@ app.get('/about', (req, res)=>{
     res.render('about', {
         title: 'About',
         name: 'catherine',
-        company: 'passion garden'
+        company: 'Passion Garden'
 
 
     })
@@ -42,7 +42,7 @@ app.get('/help', (req, res)=>{
     res.render('help', {
         title: 'Help',
         name: 'yin',
-        company: 'passion garden'
+        company: 'Passion Garden'
     })
 })
 
@@ -70,7 +70,8 @@ app.get('/weather', (req, res)=>{
             res.send({
                 location: location,
                 Data: forecastdata,
-                address: req.query.address
+                address: req.query.address,
+                foreCast: forecastdata.description + ". Temperature is " + forecastdata.temperature + "F." + " Humidity is " + forecastdata.humidity+ "%."
             })
         }
         })
@@ -85,7 +86,7 @@ app.get('/help/*', (req, res)=>{
     res.render('404page', {
         title: '404 Error',
         name: 'yin',
-        company: 'passion garden',
+        company: 'Passion Garden',
         error: 'help page can not be found'
     })
 })
@@ -95,7 +96,7 @@ app.get('*', (req, res)=>{
     res.render('404page', {
         title: '404 Error',
         name: 'yin',
-        company: 'passion garden',
+        company: 'Passion Garden',
         error: 'page can not be found'
     })
 })
